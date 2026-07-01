@@ -28,28 +28,26 @@
 
     /* ---------- HEADER ---------- */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 30px 20px 20px;
+      text-align: center;
+      padding: 30px 20px 10px;
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
     }
 
     .logo {
       width: 200px;
       display: block;
+      margin: 0 auto 10px;
     }
 
-    /* Título – escondido no mobile, visível no desktop */
     .header-title {
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: 900;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-left: 20px;
+      margin-bottom: 10px;
     }
 
     /* Ícones sociais no header (desktop) */
@@ -253,7 +251,7 @@
       margin-top: 30px;
     }
 
-    /* Ícones sociais no footer (mobile e desktop também, mas escondidos no desktop) */
+    /* Ícones sociais no footer (mobile) */
     .social-footer {
       display: none; /* visível apenas em mobile */
       justify-content: center;
@@ -366,19 +364,20 @@
 
     /* ---------- RESPONSIVO ---------- */
     @media (max-width: 768px) {
-      /* Header: só logo, sem título, e sem ícones sociais (vão para o footer) */
+      /* Header: logo maior, título visível, ícones sociais escondidos (vão para o footer) */
       header {
-        justify-content: center;
         padding: 20px 10px;
       }
+      .logo {
+        width: 70%;
+        max-width: 350px;
+        margin-bottom: 15px;
+      }
       .header-title {
-        display: none;
+        font-size: 1.6rem;
       }
       .social-header {
         display: none;
-      }
-      .logo {
-        width: 160px;
       }
 
       .hero h2 {
@@ -423,7 +422,11 @@
     /* Para telas muito pequenas, ajustes adicionais */
     @media (max-width: 480px) {
       .logo {
-        width: 130px;
+        width: 80%;
+        max-width: 300px;
+      }
+      .header-title {
+        font-size: 1.3rem;
       }
       .hero h2 {
         font-size: 1.4rem;
@@ -437,7 +440,7 @@
   <!-- HEADER -->
   <header>
     <img src="logo_sm_digital.jpg" class="logo" alt="SM Digital" />
-    
+    <h1 class="header-title">SM Digital - Soluções Digitais para o Seu Negócio</h1>
 
     <!-- Ícones sociais (desktop) -->
     <div class="social-header">
@@ -448,7 +451,7 @@
 
   <!-- HERO -->
   <section class="hero">
-<h1 class="header-title">SM Digital - Soluções Digitais para o Seu Negócio</sh1>
+
     <h2>Você cuida da sua empresa. A SM Digital cuida da sua presença na internet.</h2>
 
     <!-- SOBRE -->
@@ -516,7 +519,7 @@
       {
         imagem: 'Sites.jpg',
         titulo: 'Site Profissional Institucional',
-        descricao: 'Site completo para sua empresa, com design moderno e responsivo.' // frase alterada para não repetir
+        descricao: 'Site completo para sua empresa, com design moderno e responsivo.'
       },
       {
         imagem: 'SM_digital_vrtn.jpeg',
