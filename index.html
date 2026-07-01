@@ -1,574 +1,455 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SM Digital - Soluções Digitais para o Seu Negócio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- RESET / BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-<title>SM Digital - Soluções Digitais para o Seu Negócio</title>
+    body {
+      /* Fundo com gradiente azul escuro – substitui o fundo.svg */
+      background: linear-gradient(145deg, #0f2b4a 0%, #1e3a8a 100%);
+      min-height: 100vh;
+      color: #f8fafc;
+      padding: 0 20px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    /* ---------- HEADER ---------- */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
 
-<style>
+    .logo {
+      width: 140px;
+      margin-bottom: 20px;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
-}
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-body{
-    background:
-    linear-gradient(
-        rgba(15,23,42,.90),
-        rgba(31,41,55,.92)
-    ),
-    url('fundo.svg');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    color:white;
-}
+    /* ---------- HERO / SOBRE ---------- */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 10px 40px;
+      text-align: center;
+    }
 
-header{
-    text-align:center;
-    padding:40px 20px;
-}
+    .hero h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
 
-.logo{
-    width:240px;
-    margin-bottom:30px;
-}
+    .sobre {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 35px 30px;
+      max-width: 1000px;
+      margin: 0 auto 50px;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
 
-h1{
-    font-size:3rem;
-    font-weight:900;
-    color:#ffffff;
-    text-transform:uppercase;
-}
+    .sobre p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #e2e8f0;
+      text-align: left;
+    }
 
-.hero{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-    text-align:center;
-}
+    /* ---------- CARDS DE SERVIÇOS ---------- */
+    .servicos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-.hero h2{
-    font-size:2.6rem;
-    line-height:1.2;
-    font-weight:800;
-    color:white;
-    margin-bottom:25px;
-    color:#f8fafc;
-}
+    .card-servico {
+      background: #f8fafc;
+      border-radius: 20px;
+      overflow: hidden;
+      flex: 1 1 280px;
+      max-width: 350px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border-bottom: 5px solid #2563eb;
+    }
 
-.hero p{
-    font-size:1.15rem;
-    line-height:1.8;
-    color:#cbd5e1;
-    max-width:1000px;
-    margin:auto;
-}
+    .card-servico:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.35);
+    }
 
-/* ----- CARDS DE SERVIÇOS ----- */
-.servicos{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin-top:50px;
-    flex-wrap:wrap;
-}
+    .card-servico .img-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #1e293b;
+    }
 
-.card-servico{
-    background:#F8FAFC;  /* branco */
-    color:#1F2937;       /* grafite */
-    border-radius:16px;
-    padding:30px 20px 25px;
-    flex:1 1 200px;
-    max-width:280px;
-    text-align:center;
-    box-shadow:0 8px 24px rgba(0,0,0,0.25);
-    border-top:5px solid #2563EB;  /* azul */
-    transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-servico:hover{
-    transform:translateY(-6px);
-    box-shadow:0 14px 32px rgba(37,99,235,0.25);
-}
-.card-servico .icone{
-    font-size:2.8rem;
-    display:block;
-    margin-bottom:12px;
-}
-.card-servico h3{
-    font-size:1.2rem;
-    font-weight:700;
-    margin-bottom:6px;
-    color:#1F2937;
-}
-.card-servico p{
-    font-size:0.9rem;
-    color:#4B5563;
-    line-height:1.4;
-}
-/* --------------------------------- */
+    .card-servico .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.slider-container{
-    margin-top:50px;
-    position:relative;
-}
+    .card-servico:hover .img-wrap img {
+      transform: scale(1.03);
+    }
 
-.slider{
-    position:relative;
-    height:700px;
-    overflow:hidden;
-    border-radius:20px;
-}
+    .card-servico .info {
+      padding: 20px 18px 25px;
+      color: #1f2937;
+    }
 
-.slide{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transition:all .5s ease;
-    border-radius:18px;
-    overflow:hidden;
-    background:#111;
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.45),
-    0 0 20px rgba(37,99,235,.15); 
-    border:1px solid rgba(59,130,246,.20);
-}
+    .card-servico .info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
 
-.slide img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    cursor:pointer;
-}
+    .card-servico .info p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #4b5563;
+    }
 
-.slide.center{
-    width:55%;
-    height:520px;
-    transform:translate(-50%,-50%);
-    z-index:3;
-    opacity:1;
-}
+    /* ---------- BOTÃO WHATSAPP ---------- */
+    .buttons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-.slide.left{
-    width:25%;
-    height:350px;
-    transform:translate(-145%,-50%);
-    z-index:2;
-    opacity:.35;
-}
+    .btn {
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
 
-.slide.right{
-    width:25%;
-    height:350px;
-    transform:translate(45%,-50%);
-    z-index:2;
-    opacity:.35;
-}
+    .whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
 
-.slide.hidden{
-    opacity:0;
-    pointer-events:none;
-}
+    .whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
 
-@media(max-width:768px){
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 50px 20px 30px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
 
-.slider{
-    height:auto;
-}
+    /* ---------- MODAL ---------- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
 
-.slide{
-    position:relative;
-    left:auto;
-    top:auto;
-    transform:none !important;
-    width:100% !important;
-    height:auto !important;
-    opacity:1 !important;
-    margin-bottom:15px;
-    border:1px solid rgba(59,130,246,.20);
-}
+    .modal-content {
+      max-width: 90%;
+      max-height: 75vh;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      object-fit: contain;
+    }
 
-.slide.left,
-.slide.right,
-.slide.hidden{
-    display:none;
-}
+    .modal-legenda {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      padding: 20px 30px;
+      max-width: 700px;
+      width: 90%;
+      margin-top: 25px;
+      text-align: center;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+    }
 
-.slide.center img{
-    width:100%;
-    height:auto;
-}
+    .modal-legenda h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 6px;
+    }
 
-/* cards em mobile */
-.servicos{
-    flex-direction:column;
-    align-items:center;
-}
-.card-servico{
-    max-width:100%;
-    width:100%;
-}
+    .modal-legenda p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
 
-}
+    .close {
+      position: absolute;
+      right: 40px;
+      top: 30px;
+      font-size: 42px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      z-index: 10;
+    }
+    .close:hover {
+      color: #60a5fa;
+    }
 
-    
-.nav{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:#2563eb;
-    border:none;
-    color:white;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:24px;
-    z-index:5;
-    transition:background 0.3s;
-}
-.nav:hover{
-    background:#1d4ed8;
-}
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 28px;
+      transition: 0.25s;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-nav:hover {
+      background: #1d4ed8;
+    }
 
-.prev{
-    left:15px;
-}
+    .modal-prev {
+      left: 20px;
+    }
+    .modal-next {
+      right: 20px;
+    }
 
-.next{
-    right:15px;
-}
-
-.buttons{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    text-decoration:none;
-    padding:18px 35px;
-    border-radius:12px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.site{
-    background:#2563eb;
-    color:white;
-}
-.site:hover{
-    background:#1d4ed8;
-}
-    
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-footer{
-    text-align:center;
-    padding:50px 20px;
-    color:#bbb;
-}
-
-/* Modal */
-
-.modal{
-    display:none;
-    position:fixed;
-    z-index:9999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.95);
-}
-
-.modal-content{
-    width:90%;
-    max-width:1400px;
-    margin:auto;
-    display:block;
-    margin-top:40px;
-    max-height:85vh;
-    object-fit:contain;
-}
-
-.close{
-    position:absolute;
-    right:30px;
-    top:20px;
-    font-size:40px;
-    cursor:pointer;
-    color:white;
-}
-
-.modal-nav{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:#2563eb;
-    color:white;
-    border:none;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:24px;
-    transition:background 0.3s;
-}
-.modal-nav:hover{
-    background:#1d4ed8;
-}
-
-.modal-prev{
-    left:20px;
-}
-
-.modal-next{
-    right:20px;
-}
-
-@media(max-width:768px){
-
-h1{
-    font-size:2rem;
-}
-
-.hero h2{
-    font-size:1.6rem;
-}
-
-.slide img{
-    height:300px;
-}
-
-}
-
-</style>
+    /* ---------- RESPONSIVO ---------- */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+      .sobre p {
+        font-size: 1rem;
+      }
+      .card-servico {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+      .card-servico .img-wrap {
+        height: 180px;
+      }
+      .modal-content {
+        max-height: 60vh;
+      }
+      .modal-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+      }
+      .modal-prev {
+        left: 8px;
+      }
+      .modal-next {
+        right: 8px;
+      }
+      .close {
+        right: 20px;
+        top: 20px;
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
+    <img src="logo_sm_digital.png" class="logo" alt="SM Digital" />
+    <h1>SM Digital - Soluções Digitais para o Seu Negócio</h1>
+  </header>
 
-<img src="logo_sm_digital.jpg" class="logo">
+  <section class="hero">
 
-<h1>SM Digital - Soluções Digitais para o Seu Negócio</h1>
+    <h2>Você cuida da sua empresa. A SM Digital cuida da sua presença na internet.</h2>
 
-</header>
-
-<section class="hero">
-
-<h2>
-Você cuida da sua empresa. A SM Digital cuida da sua presença na internet.
-</h2>
-
-<p>
-A SM Digital é especializada em soluções de baixo custo para presença digital e desenvolvimento web para Micro e pequenas empresas e profissionais autônomos.
-</p>
-
-<!-- CARDS DE SERVIÇOS -->
-<div class="servicos">
-
-    <div class="card-servico">
-        <span class="icone">🌎</span>
-        <h3>Sua empresa aparece no Google</h3>
-        <p>Seja encontrado com facilidade</p>
+    <!-- SEÇÃO SOBRE -->
+    <div class="sobre">
+      <p>
+        A SM Digital é especializada em soluções para presença digital e desenvolvimento web para empresas e profissionais.
+        Criamos landing pages, sites institucionais e realizamos a configuração completa do Perfil da Empresa no Google,
+        ajudando nossos clientes a serem encontrados com mais facilidade nas pesquisas e no Google Maps.
+        Também integramos WhatsApp, formulários de contato, mapas e outras ferramentas para facilitar o atendimento
+        e gerar mais oportunidades de negócio. Nosso objetivo é oferecer soluções práticas, profissionais e acessíveis,
+        com atendimento personalizado, desenvolvimento ágil e foco em resultados para fortalecer a presença online de cada cliente.
+      </p>
     </div>
 
-    <div class="card-servico">
-        <span class="icone">💻</span>
-        <h3>Site Profissional</h3>
-        <p>Design moderno e responsivo</p>
+    <!-- CARDS DE SERVIÇOS -->
+    <div class="servicos" id="cardsContainer">
+      <!-- Os cards serão gerados via JavaScript para manter consistência com o modal -->
     </div>
 
-    <div class="card-servico">
-        <span class="icone">📱</span>
-        <h3>WhatsApp Integrado</h3>
-        <p>Atendimento direto e rápido</p>
+    <!-- BOTÃO WHATSAPP -->
+    <div class="buttons">
+      <a class="btn whatsapp" href="https://wa.me/5555999235620" target="_blank">
+        Falar no WhatsApp
+      </a>
     </div>
 
-</div>
+  </section>
 
-<div class="slider-container">
+  <footer>
+    © SM Digital - Soluções Digitais para o Seu Negócio
+  </footer>
 
-<button class="nav prev" onclick="anterior()">❮</button>
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <span class="close" onclick="fecharModal()">&times;</span>
+    <button class="modal-nav modal-prev" onclick="modalAnterior()">❮</button>
+    <img id="modalImg" class="modal-content" alt="Imagem do serviço" />
+    <div class="modal-legenda" id="modalLegenda">
+      <h3 id="modalTitulo"></h3>
+      <p id="modalDescricao"></p>
+    </div>
+    <button class="modal-nav modal-next" onclick="modalProximo()">❯</button>
+  </div>
 
-<div class="slider">
+  <script>
+    // ---------- DADOS DOS SERVIÇOS ----------
+    const servicos = [
+      {
+        imagem: 'Presenca_Digital.jpg',
+        titulo: 'Presença Digital',
+        descricao: 'Faço sua empresa aparecer no Google e gerar mais oportunidades de negócio pela internet.'
+      },
+      {
+        imagem: 'Sites.jpg',
+        titulo: 'Site Profissional Institucional',
+        descricao: 'Você cuida da sua empresa. A SM Digital cuida da sua presença na internet.'
+      },
+      {
+        imagem: 'SM_digital_vrtn.jpeg',
+        titulo: 'Desenvolvimento de Sites e Landing Pages Profissionais',
+        descricao: 'Sites profissionais para pequenas empresas, sem mensalidade e sem complicação.'
+      }
+    ];
 
-<div class="slide"><img src="Presenca_Digital.jpg" onclick="abrirModal(0)"></div>
-<div class="slide"><img src="Sites.jpg" onclick="abrirModal(1)"></div>
-<div class="slide"><img src="SM_digital_vrtn.jpeg" onclick="abrirModal(2)"></div>
+    // ---------- RENDERIZAR CARDS ----------
+    const container = document.getElementById('cardsContainer');
 
-</div>
+    servicos.forEach((item, idx) => {
+      const card = document.createElement('div');
+      card.className = 'card-servico';
+      card.setAttribute('data-index', idx);
 
-<button class="nav next" onclick="proximo()">❯</button>
+      card.innerHTML = `
+        <div class="img-wrap">
+          <img src="${item.imagem}" alt="${item.titulo}" />
+        </div>
+        <div class="info">
+          <h3>${item.titulo}</h3>
+          <p>${item.descricao}</p>
+        </div>
+      `;
 
-</div>
+      card.addEventListener('click', () => abrirModal(idx));
+      container.appendChild(card);
+    });
 
-<div class="buttons">
+    // ---------- MODAL ----------
+    let modalIndex = 0;
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitulo = document.getElementById('modalTitulo');
+    const modalDescricao = document.getElementById('modalDescricao');
 
-<a class="btn whatsapp"
-href="https://wa.me/5555999235620"
-target="_blank">
-Falar no WhatsApp
-</a>
+    function abrirModal(index) {
+      modalIndex = index;
+      const item = servicos[modalIndex];
+      modalImg.src = item.imagem;
+      modalTitulo.textContent = item.titulo;
+      modalDescricao.textContent = item.descricao;
+      modal.style.display = 'flex';
+    }
 
-</div>
+    function fecharModal() {
+      modal.style.display = 'none';
+    }
 
-</section>
+    function modalProximo() {
+      modalIndex = (modalIndex + 1) % servicos.length;
+      const item = servicos[modalIndex];
+      modalImg.src = item.imagem;
+      modalTitulo.textContent = item.titulo;
+      modalDescricao.textContent = item.descricao;
+    }
 
-<footer>
+    function modalAnterior() {
+      modalIndex = (modalIndex - 1 + servicos.length) % servicos.length;
+      const item = servicos[modalIndex];
+      modalImg.src = item.imagem;
+      modalTitulo.textContent = item.titulo;
+      modalDescricao.textContent = item.descricao;
+    }
 
-© SM Digital - Soluções Digitais para o Seu Negócio
+    // Fechar modal ao clicar fora da imagem/legenda (no fundo)
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) fecharModal();
+    });
 
-</footer>
-
-<!-- MODAL -->
-
-<div class="modal" id="modal">
-
-<span class="close" onclick="fecharModal()">&times;</span>
-
-<button class="modal-nav modal-prev" onclick="modalAnterior()">❮</button>
-
-<img id="modalImg" class="modal-content">
-
-<button class="modal-nav modal-next" onclick="modalProximo()">❯</button>
-
-</div>
-
-<script>
-
-let index = 0;
-
-const slides =
-document.querySelectorAll('.slide');
-
-function atualizarCarrossel(){
-
-slides.forEach(slide=>{
-
-slide.classList.remove(
-'left',
-'center',
-'right',
-'hidden'
-);
-
-});
-
-let esquerda =
-(index - 1 + slides.length)
-% slides.length;
-
-let direita =
-(index + 1)
-% slides.length;
-
-slides[index]
-.classList.add('center');
-
-slides[esquerda]
-.classList.add('left');
-
-slides[direita]
-.classList.add('right');
-
-slides.forEach((slide,i)=>{
-
-if(
-i !== index &&
-i !== esquerda &&
-i !== direita
-){
-slide.classList.add('hidden');
-}
-
-});
-
-}
-
-function proximo(){
-
-index =
-(index + 1)
-% slides.length;
-
-atualizarCarrossel();
-
-}
-
-function anterior(){
-
-index =
-(index - 1 + slides.length)
-% slides.length;
-
-atualizarCarrossel();
-
-}
-
-atualizarCarrossel();
-
-setInterval(proximo,5000);
-
-/* Modal – nomes corrigidos para coincidir com os src das imagens */
-const imagens=[
-    'Presenca_Digital.jpg',
-    'Sites.jpg',
-    'SM_digital_vrtn.jpeg'
-];
-
-let modalIndex=0;
-
-function abrirModal(i){
-
-modalIndex=i;
-
-document.getElementById('modal').style.display='block';
-
-document.getElementById('modalImg').src=
-imagens[modalIndex];
-}
-
-function fecharModal(){
-document.getElementById('modal').style.display='none';
-}
-
-function modalProximo(){
-
-modalIndex=(modalIndex+1)%imagens.length;
-
-document.getElementById('modalImg').src=
-imagens[modalIndex];
-
-}
-
-function modalAnterior(){
-
-modalIndex=(modalIndex-1+imagens.length)%imagens.length;
-
-document.getElementById('modalImg').src=
-imagens[modalIndex];
-
-}
-
-</script>
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') fecharModal();
+      if (e.key === 'ArrowRight') modalProximo();
+      if (e.key === 'ArrowLeft') modalAnterior();
+    });
+  </script>
 
 </body>
 </html>
