@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FHG Soluções - Esquadrias de Alumínio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(
+        rgba(20,20,20,.88),
+        rgba(20,20,20,.88)
+    ),
+    url('fundo.svg');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.logo{
+    width:140px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:3rem;
+    font-weight:900;
+    color:#ffffff;
+    text-transform:uppercase;
+}
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:2.6rem;
+    line-height:1.2;
+    font-weight:800;
+    color:white;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.15rem;
+    line-height:1.8;
+    color:#e5e5e5;
+    max-width:1000px;
+    margin:auto;
+}
+
+.slider-container{
+    margin-top:50px;
+    position:relative;
+}
+
+.slider{
+    position:relative;
+    height:700px;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.slide{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transition:all .5s ease;
+    border-radius:18px;
+    overflow:hidden;
+    background:#111;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    cursor:pointer;
+}
+
+.slide.center{
+    width:55%;
+    height:520px;
+    transform:translate(-50%,-50%);
+    z-index:3;
+    opacity:1;
+}
+
+.slide.left{
+    width:25%;
+    height:350px;
+    transform:translate(-145%,-50%);
+    z-index:2;
+    opacity:.35;
+}
+
+.slide.right{
+    width:25%;
+    height:350px;
+    transform:translate(45%,-50%);
+    z-index:2;
+    opacity:.35;
+}
+
+.slide.hidden{
+    opacity:0;
+    pointer-events:none;
+}
+
+@media(max-width:768px){
+
+.slider{
+    height:auto;
+}
+
+.slide{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:1 !important;
+    margin-bottom:15px;
+}
+
+.slide.left,
+.slide.right,
+.slide.hidden{
+    display:none;
+}
+
+.slide.center img{
+    width:100%;
+    height:auto;
+}
+
+}
+
+    
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(180,0,0,.8);
+    border:none;
+    color:white;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:24px;
+    z-index:5;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+.buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.site{
+    background:#8b0000;
+    color:white;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#bbb;
+}
+
+/* Modal */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.95);
+}
+
+.modal-content{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:block;
+    margin-top:40px;
+    max-height:85vh;
+    object-fit:contain;
+}
+
+.close{
+    position:absolute;
+    right:30px;
+    top:20px;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.modal-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#8b0000;
+    color:white;
+    border:none;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:24px;
+}
+
+.modal-prev{
+    left:20px;
+}
+
+.modal-next{
+    right:20px;
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:2rem;
+}
+
+.hero h2{
+    font-size:1.6rem;
+}
+
+.slide img{
+    height:300px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="logo_fhg.jpg" class="logo">
+
+<h1>FHG Soluções</h1>
+
+</header>
+
+<section class="hero">
+
+<h2>
+Conheça a linha de soluções completas e personalizadas em esquadrias de alumínio da FHG Soluções
+</h2>
+
+<p>
+Com foco em qualidade, agilidade e transparência, trabalhamos lado a lado com nossos clientes para entregar resultados duradouros, funcionais e sob medida, garantindo mais agilidade, economia e eficiência na sua obra.
+</p>
+
+<div class="slider-container">
+
+<button class="nav prev" onclick="anterior()">❮</button>
+
+<div class="slider">
+
+
+
+<div class="slide"><img src="esquadria0.jpg" onclick="abrirModal(0)"></div>
+<div class="slide"><img src="esquadria1.jpg" onclick="abrirModal(1)"></div>
+<div class="slide"><img src="esquadria2.jpg" onclick="abrirModal(2)"></div>
+<div class="slide"><img src="esquadria3.jpg" onclick="abrirModal(3)"></div>
+<div class="slide"><img src="esquadria4.jpg" onclick="abrirModal(4)"></div>
+<div class="slide"><img src="esquadria5.jpg" onclick="abrirModal(5)"></div>
+
+
+
+</div>
+
+<button class="nav next" onclick="proximo()">❯</button>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn site"
+href="https://fhgsolucoes.com.br/"
+target="_blank">
+Ir para o Site Principal
+</a>
+
+<a class="btn whatsapp"
+href="https://wa.me/5555991271111"
+target="_blank">
+Falar no WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© FHG Soluções - Esquadrias de Alumínio
+
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<span class="close" onclick="fecharModal()">&times;</span>
+
+<button class="modal-nav modal-prev" onclick="modalAnterior()">❮</button>
+
+<img id="modalImg" class="modal-content">
+
+<button class="modal-nav modal-next" onclick="modalProximo()">❯</button>
+
+</div>
+
+<script>
+
+let index = 0;
+
+const slides =
+document.querySelectorAll('.slide');
+
+function atualizarCarrossel(){
+
+slides.forEach(slide=>{
+
+slide.classList.remove(
+'left',
+'center',
+'right',
+'hidden'
+);
+
+});
+
+let esquerda =
+(index - 1 + slides.length)
+% slides.length;
+
+let direita =
+(index + 1)
+% slides.length;
+
+slides[index]
+.classList.add('center');
+
+slides[esquerda]
+.classList.add('left');
+
+slides[direita]
+.classList.add('right');
+
+slides.forEach((slide,i)=>{
+
+if(
+i !== index &&
+i !== esquerda &&
+i !== direita
+){
+slide.classList.add('hidden');
+}
+
+});
+
+}
+
+function proximo(){
+
+index =
+(index + 1)
+% slides.length;
+
+atualizarCarrossel();
+
+}
+
+function anterior(){
+
+index =
+(index - 1 + slides.length)
+% slides.length;
+
+atualizarCarrossel();
+
+}
+
+atualizarCarrossel();
+
+setInterval(proximo,5000);
+
+/* Modal */
+
+const imagens=[
+'esquadria0.jpg',
+'esquadria1.jpg',
+'esquadria2.jpg',
+'esquadria3.jpg',
+'esquadria4.jpg',
+'esquadria5.jpg'
+];
+
+let modalIndex=0;
+
+function abrirModal(i){
+
+modalIndex=i;
+
+document.getElementById('modal').style.display='block';
+
+document.getElementById('modalImg').src=
+imagens[modalIndex];
+}
+
+function fecharModal(){
+document.getElementById('modal').style.display='none';
+}
+
+function modalProximo(){
+
+modalIndex=(modalIndex+1)%imagens.length;
+
+document.getElementById('modalImg').src=
+imagens[modalIndex];
+
+}
+
+function modalAnterior(){
+
+modalIndex=(modalIndex-1+imagens.length)%imagens.length;
+
+document.getElementById('modalImg').src=
+imagens[modalIndex];
+
+}
+
+</script>
+
+</body>
+</html>
