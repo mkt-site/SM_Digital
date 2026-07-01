@@ -20,8 +20,8 @@
 body{
     background:
     linear-gradient(
-        rgba(20,20,20,.88),
-        rgba(20,20,20,.88)
+        rgba(15,23,42,.90),
+        rgba(31,41,55,.92)
     ),
     url('fundo.svg');
     background-size:cover;
@@ -60,12 +60,13 @@ h1{
     font-weight:800;
     color:white;
     margin-bottom:25px;
+    color:#f8fafc;
 }
 
 .hero p{
     font-size:1.15rem;
     line-height:1.8;
-    color:#e5e5e5;
+    color:#cbd5e1;
     max-width:1000px;
     margin:auto;
 }
@@ -90,7 +91,10 @@ h1{
     border-radius:18px;
     overflow:hidden;
     background:#111;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45),
+    0 0 20px rgba(37,99,235,.15); 
+    border:1px solid rgba(59,130,246,.20);
 }
 
 .slide img{
@@ -144,6 +148,7 @@ h1{
     height:auto !important;
     opacity:1 !important;
     margin-bottom:15px;
+    border:1px solid rgba(59,130,246,.20);
 }
 
 .slide.left,
@@ -164,7 +169,7 @@ h1{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    background:rgba(180,0,0,.8);
+    background:#2563eb;
     border:none;
     color:white;
     width:55px;
@@ -200,10 +205,13 @@ h1{
 }
 
 .site{
-    background:#8b0000;
+    background:#2563eb;
     color:white;
 }
-
+.site:hover{
+    background:#1d4ed8;
+}
+    
 .whatsapp{
     background:#25D366;
     color:white;
@@ -254,7 +262,7 @@ footer{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    background:#8b0000;
+    background:#2563eb;
     color:white;
     border:none;
     width:60px;
