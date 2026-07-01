@@ -71,6 +71,49 @@ h1{
     margin:auto;
 }
 
+/* ----- CARDS DE SERVIÇOS ----- */
+.servicos{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:50px;
+    flex-wrap:wrap;
+}
+
+.card-servico{
+    background:#F8FAFC;  /* branco */
+    color:#1F2937;       /* grafite */
+    border-radius:16px;
+    padding:30px 20px 25px;
+    flex:1 1 200px;
+    max-width:280px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    border-top:5px solid #2563EB;  /* azul */
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-servico:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 32px rgba(37,99,235,0.25);
+}
+.card-servico .icone{
+    font-size:2.8rem;
+    display:block;
+    margin-bottom:12px;
+}
+.card-servico h3{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:6px;
+    color:#1F2937;
+}
+.card-servico p{
+    font-size:0.9rem;
+    color:#4B5563;
+    line-height:1.4;
+}
+/* --------------------------------- */
+
 .slider-container{
     margin-top:50px;
     position:relative;
@@ -162,6 +205,16 @@ h1{
     height:auto;
 }
 
+/* cards em mobile */
+.servicos{
+    flex-direction:column;
+    align-items:center;
+}
+.card-servico{
+    max-width:100%;
+    width:100%;
+}
+
 }
 
     
@@ -178,6 +231,10 @@ h1{
     cursor:pointer;
     font-size:24px;
     z-index:5;
+    transition:background 0.3s;
+}
+.nav:hover{
+    background:#1d4ed8;
 }
 
 .prev{
@@ -256,6 +313,7 @@ footer{
     top:20px;
     font-size:40px;
     cursor:pointer;
+    color:white;
 }
 
 .modal-nav{
@@ -270,6 +328,10 @@ footer{
     border-radius:50%;
     cursor:pointer;
     font-size:24px;
+    transition:background 0.3s;
+}
+.modal-nav:hover{
+    background:#1d4ed8;
 }
 
 .modal-prev{
@@ -319,20 +381,38 @@ Você cuida da sua empresa. A SM Digital cuida da sua presença na internet.
 A SM Digital é especializada em soluções de baixo custo para presença digital e desenvolvimento web para Micro e pequenas empresas e profissionais autônomos.
 </p>
 
+<!-- CARDS DE SERVIÇOS -->
+<div class="servicos">
+
+    <div class="card-servico">
+        <span class="icone">🌎</span>
+        <h3>Sua empresa aparece no Google</h3>
+        <p>Seja encontrado com facilidade</p>
+    </div>
+
+    <div class="card-servico">
+        <span class="icone">💻</span>
+        <h3>Site Profissional</h3>
+        <p>Design moderno e responsivo</p>
+    </div>
+
+    <div class="card-servico">
+        <span class="icone">📱</span>
+        <h3>WhatsApp Integrado</h3>
+        <p>Atendimento direto e rápido</p>
+    </div>
+
+</div>
+
 <div class="slider-container">
 
 <button class="nav prev" onclick="anterior()">❮</button>
 
 <div class="slider">
 
-
-
 <div class="slide"><img src="Presenca_Digital.jpg" onclick="abrirModal(0)"></div>
 <div class="slide"><img src="Sites.jpg" onclick="abrirModal(1)"></div>
 <div class="slide"><img src="SM_digital_vrtn.jpeg" onclick="abrirModal(2)"></div>
-
-
-
 
 </div>
 
@@ -341,8 +421,6 @@ A SM Digital é especializada em soluções de baixo custo para presença digita
 </div>
 
 <div class="buttons">
-
-
 
 <a class="btn whatsapp"
 href="https://wa.me/5555999235620"
@@ -449,12 +527,11 @@ atualizarCarrossel();
 
 setInterval(proximo,5000);
 
-/* Modal */
-
+/* Modal – nomes corrigidos para coincidir com os src das imagens */
 const imagens=[
-'Presenca_digital.jpg',
-'sites.jpg',
-'SM_digital_vrtn.jpeg'
+    'Presenca_Digital.jpg',
+    'Sites.jpg',
+    'SM_digital_vrtn.jpeg'
 ];
 
 let modalIndex=0;
